@@ -1,7 +1,0 @@
-/* Mobile Styles */
-@media only screen and (min-width: 540px) and (max-width: 990px) {
-    .imgin{
-        margin: 5px 0 10px;
-        display: block;
-    }
-}
