@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <%- include('includes/plug'); %>
+</head>
+<body>
+    <%- include('includes/header'); %>
+<main>
+    <div class="form-head">
+        <h3>Booking For</h3>
+        <h5><%=from%> to <%=to%></h5>
+    </div>
+    <hr>
+    <form class="row g-3" action="/cform" method="post" enctype="multipart/form-data">
+        <h4>Personal Information</h4>
+        <div class="col-md-4">
+          <label for="validationDefault01" class="form-label">Full name</label>
+          <input type="text" name="fname" class="form-control" id="validationDefault01" required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault02" class="form-label">Contact</label>
+          <input type="tel" name="cno" class="form-control" id="validationDefault02"  required>
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefaultUsername" class="form-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+            <input type="mail" name="email" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2">
+          </div>
+        </div>
+        <div class="col-md-1">
+            <label for="validationDefault01" class="form-label">Age</label>
+            <input type="number" name="age" class="form-control" id="validationDefault01" required>
+          </div>
+          <div class="col-md-2">
+            <label for="validationDefault01" class="form-label">Gender</label>
+            <select class="form-select" name="gender" aria-label="Default select example" required>
+                <option value="">select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+          </div>
+          <hr>
+          <h4>Booking Information</h4>
+        <div class="col-md-3">
+            <label for="validationDefault01" class="form-label">Date for Booking</label>
+            <input type="date" name="bdate" class="form-control" id="validationDefault01" required>
+          </div>
+          <div class="col-md-6">
+            <label for="validationDefault01" class="form-label">Material Image</label>
+            <div class="input-group">
+                <input type="file" name="mimg" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              </div>
+          </div>
+          <div class="col-md-2">
+            <label for="validationDefault01" class="form-label">Distance</label>
+            <input type="text" name="distance" class="form-control" id="validationDefault01" placeholder="Type in 00 KM" required>
+          </div>
+          <div class="col-md-12">
+            <label for="validationDefault01" class="form-label">List of materials & other.</label>
+                <textarea class="form-control" name="moreinfo" placeholder="Tyep here" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+            <input type="text" name="fform" class="form-control hidden" id="validationDefault01" value="<%=from%>">
+            <input type="text" name="tto" class="form-control hidden" id="validationDefault01" value="<%=to%>">
+            <hr>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" name="tandc" type="checkbox" value="t&c" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              <span style="font-weight: 900;">Agree to terms and conditions :</span> Booking confirmation will be done after talking to you on phone. W'll call you with in 8 hours.
+            </label>
+          </div>
+        </div>
+        <div class="col-12 center">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+</main>
+    <%- include('includes/footer'); %>
+</body>
+</html>

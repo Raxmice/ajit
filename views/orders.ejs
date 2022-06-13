@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orders</title>
+    <%- include('includes/plug'); %>
+    </head>
+<body class="text-center">
+    <%- include('includes/header'); %>
+    <main>
+        <div class="link-care"><a class="btn-c" href="complete">Completed Orders</a></div>
+        <% for(let i=odata.length-1; i>=0; i--){ %>
+            <% if(odata[i].status != "complete"){ %>
+            <% let name = odata[i].fname; %>
+            <% let odate = odata[i].bdate; %>
+            <% let from = odata[i].form; %>
+            <% let to = odata[i].to; %>
+            <% let moreinfo = odata[i].moreinfo; %>
+            <% let cno = odata[i].cno; %>
+            <% let email = odata[i].email; %>
+            <% let age = odata[i].age; %>
+            <% let gender = odata[i].gender; %>
+            <% let mimg = odata[i].mimg; %>
+            <% let id = odata[i].id; %>
+            <form action="orders" method="post">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <h3 class="mb-0"><%=name%></h3>
+                  <div class="mb-1 text-muted"><%=odate%>  (<%=from%>-<%=to%>)</div>
+                  <div class="mb-1 text-muted">Age : <%=age%> <%=gender%></div>
+                  <h6>Contact : <%=cno%><br>Email : <%=email%></h6>
+                  <input type="text" class="hidden" name="id" value="<%=id%>">
+                  <p class="card-text mb-auto"><%=moreinfo%></p>
+                  <div class="imgin">
+                    <img class="bd-placeholder-img" width="100%" src="<%=mimg%>" alt="materials"/>
+                  </div>
+                  <button class="btn-link complete" name="complete" value="complete" type="submit">Order Complete</button>
+                 </div>
+                <div class="col-auto d-none d-lg-block">
+                  <img class="bd-placeholder-img" width="350" height="350px" src="<%=mimg%>" alt="materials"/>
+                </div>
+              </div>
+              </form>
+            <% }} %>
+    </main>
+
+    <%- include('includes/footer'); %>
+</body>
+</html>
