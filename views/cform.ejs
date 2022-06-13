@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <%- include('includes/plug'); %>
+</head>
+<body>
+    <%- include('includes/header'); %>
+    <main>
+        <h3>Booking for <%=form%> to <%=to%></h3><hr>
+    <div class="pdf">
+        <div><h4>Personal Infromation</h4>
+            <p><span>Name : </span><%=fname%></p>
+            <p><span>Contact : </span><%=cno%></p>
+            <p><span>Email : </span><%=email%></p>
+            <p><span>Age : </span><%=age%></p>
+            <p><span>Gender : </span><%=gender%></p>
+        </div>
+        <div>
+            <h4>Booking Infromation</h4>
+            <p><span>O & D : </span><%=form%> - <%=to%></p>
+            <p><span>Distance : </span><%=dist%> km</p>
+            <p><span>Booking for Date : </span><%=bdate%></p>
+            <p><span>Material List and Other info : </span><%=moreinfo%></p>
+        </div>
+        <div>
+            <h4>Material Image</h4>
+            <img class="mimg" src="<%=mimg%>" alt="material image">
+        </div>
+    </div>
+    <hr>
+    <p>Booking form succsessfully submited.</p>
+    <div class="ss"><img src="img/warning.svg" alt="warning" width="30px">Take a SCREEN SHOT of this page.</div>
+  </main>
+
+<%- include('includes/footer'); %>
+</body>
+</html>
