@@ -41,7 +41,7 @@ const isAuth = (req, res, next)=>{
         res.redirect('/login');
     }
 }
-mongoose.connect("mongodb+srv://<username>:<password>@cluster0.s6ynftf.mongodb.net/ajitbookings", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://ajit_admin:ajit1998@cluster0.s6ynftf.mongodb.net/ajitbookings", {useNewUrlParser: true});
 // mongoose.connect("mongodb+srv://<username>:<password>cluster0.s6ynftf.mongodb.net/ajitbookings", {useNewUrlParser: true});
 const bookinfo = {
         fname:String,
